@@ -1,39 +1,37 @@
-/*nikud = function(input) {
-
-}
-input = document.getElementById('q')
-*/
 $(document).ready(function() {
 
-	nikudInput = $('.nikud input');
+	var nikudInput = $('.nikud input'),
+		kamatzKey = $('#nikud-key-kamatz'),
 
-	kamatzKey = $('#nikud-key-kamatz');
-	patachKey = $('#nikud-key-patach');
-	tzereKey = $('#nikud-key-tzere');
-	segolKey = $('#nikud-key-segol');
-	hiriqKey = $('#nikud-key-hiriq');
-	holamKey = $('#nikud-key-holam');
-	kubutzKey = $('#nikud-key-kubutz');
-	shvaKey = $('#nikud-key-shva');
+		patachKey = $('#nikud-key-patach'),
+		tzereKey = $('#nikud-key-tzere'),
+		segolKey = $('#nikud-key-segol'),
+		hiriqKey = $('#nikud-key-hiriq'),
+		holamKey = $('#nikud-key-holam'),
+		kubutzKey = $('#nikud-key-kubutz'),
+		shvaKey = $('#nikud-key-shva'),
 
-	allKey = $('.nikud-key');
-	nikudKey = $('.nikud-key:not(#nikud-key-dagesh)');
-	dageshKey = $('#nikud-key-dagesh');
+		allKey = $('.nikud-key'),
+		nikudKey = $('.nikud-key:not(#nikud-key-dagesh)'),
+		dageshKey = $('#nikud-key-dagesh');
 
 	checkChars = function() {
-		val = $(nikudInput).val();
-		lastChar = val.charCodeAt(val.length - 1);
-		secoundLastChar = val.charCodeAt(val.length - 2);
+		var val = nikudInput.val();
 
-		if (isNaN(lastChar) || lastChar < 1488 || lastChar > 1514) {
+		// lastChar = val.charCodeAt(val.length - 1);
+		// secoundLastChar = val.charCodeAt(val.length - 2);
+
+		currentChar = val.charCodeAt(nikudInput[0].selectionEnd - 1);
+		secoundCurrentChar = val.charCodeAt(nikudInput[0].selectionEnd - 2);
+
+		if (isNaN(currentChar) || currentChar < 1488 || currentChar > 1514) {
 			allKey.addClass('-disabled');
 			if (
-				lastChar == 1468 && secoundLastChar > 1455 && secoundLastChar < 1470 ||
-				secoundLastChar == 1468 && lastChar > 1455 && lastChar < 1470
-			) {
-			} else if (lastChar == 1468) { //dagesh
+				currentChar == 1468 && secoundCurrentChar > 1455 && secoundCurrentChar < 1470 ||
+				secoundCurrentChar == 1468 && currentChar > 1455 && currentChar < 1470
+			) {} else if (currentChar == 1468) { //dagesh
 				nikudKey.removeClass('-disabled');
-			} else if (lastChar > 1455 && lastChar < 1470) { //nikud
+			} else if (currentChar > 1455 && currentChar < 1470) { //nikud
 				dageshKey.removeClass('-disabled');
 			}
 		} else {
@@ -42,21 +40,17 @@ $(document).ready(function() {
 	}
 
 	checkChars();
-	$(nikudInput).keyup(checkChars)
+	nikudInput.keyup(checkChars)
+	nikudInput.mouseup(checkChars)
 
 	$('.nikud-key').click(function() {
 		if (!$(this).hasClass('-disabled')) {
-			$(nikudInput).val(
-				$(nikudInput).val() + $(this).attr('data-nikud')
+			var pos = nikudInput[0].selectionEnd;
+			nikudInput.val(
+				nikudInput.val().slice(0, pos) + $(this).attr('data-nikud') + nikudInput.val().slice(pos)
 			)
+			nikudInput[0].setSelectionRange(pos+1, pos+1)
 			checkChars();
 		}
 	})
-
-	// $(document).keyup(function(e){
-	// 	console.log(e.keyCode)
-	// })
-	o = function() {
-		console.log($(nikudInput).val().slice(-1).charCodeAt(0))
-	}
 })
