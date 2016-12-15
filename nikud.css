@@ -1,4 +1,4 @@
-.nikud * {
+﻿.nikud * {
 	box-sizing: border-box;
 }
 .nikud {
@@ -55,6 +55,7 @@
 	position: absolute;
 	right: 0;
 	left: 0;
+	top: 0;
 	color: #ccc;
 }
 .nikud-key:active:not(.-disabled) span {

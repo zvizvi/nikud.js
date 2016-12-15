@@ -1,4 +1,4 @@
-$(document).ready(function() {
+﻿$(document).ready(function() {
 
 	var nikudInput = $('.nikud input'),
 		kamatzKey = $('#nikud-key-kamatz'),
