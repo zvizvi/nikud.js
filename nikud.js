@@ -51,6 +51,7 @@
 			)
 			nikudInput[0].setSelectionRange(pos+1, pos+1)
 			checkChars();
+			nikudInput.focus();
 		}
 	})
 })
