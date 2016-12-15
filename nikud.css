@@ -1,0 +1,59 @@
+.nikud * {
+	box-sizing: border-box;
+}
+.nikud {
+	display: inline-block;
+	position: relative;
+}
+.nikud input{
+	font-family: SBL Hebrew, David, Narkisim, monospace;
+}
+.nikud-keyboard {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	display: flex;
+	justify-content: space-around;
+	width: 355px;
+	background: #d0d5db;
+	padding: 5px 2px 6px;
+	/*user-select: text;*/
+	user-select: none;
+	font-size: 28px;
+	border-radius: 2px;
+}
+.nikud-key {
+	display: inline-block;
+	width: 30px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 4px;
+	cursor: pointer;
+	background: #fff;
+	box-shadow: 0 2px #999, inset 0 0 #999;
+	transition: box-shadow 0.15s;
+}
+.nikud-key.-disabled {
+	background: #eee;
+	color: #999;
+}
+.nikud-key:active:not(.-disabled) {
+	box-shadow: 0 0 #999, inset 0 1px 0 1px #999;
+}
+.nikud-key span {
+	display: inline-block;
+	position: relative;
+	width: 16px;
+	transition: transform 0.15s;
+}
+.nikud-key span:after {
+	content:'○';
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	left: 0;
+	color: #ccc;
+}
+.nikud-key:active:not(.-disabled) span {
+	transform: translateY(1px);
+}
