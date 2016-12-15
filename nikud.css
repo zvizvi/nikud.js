@@ -14,7 +14,7 @@
 	right: 0;
 	display: flex;
 	justify-content: space-around;
-	width: 355px;
+	width: 415px;
 	background: #d0d5db;
 	padding: 5px 2px 6px;
 	/*user-select: text;*/
@@ -32,6 +32,9 @@
 	background: #fff;
 	box-shadow: 0 2px #999, inset 0 0 #999;
 	transition: box-shadow 0.15s;
+}
+#nikud-key-dagesh {
+	margin-right: 5px;
 }
 .nikud-key.-disabled {
 	background: #eee;
