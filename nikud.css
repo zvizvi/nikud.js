@@ -5,22 +5,32 @@
 	display: inline-block;
 	position: relative;
 }
-.nikud input{
-	font-family: SBL Hebrew, David, Narkisim, monospace;
+.nikud input,
+.nikud-keyboard {
+	font-family: SBL Hebrew, Narkisim, David, monospace;
 }
 .nikud-keyboard {
 	position: absolute;
 	top: 100%;
 	right: 0;
 	display: flex;
+	opacity: 0;
+	visibility: hidden;
 	justify-content: space-around;
 	width: 415px;
 	background: #d0d5db;
 	padding: 5px 2px 6px;
-	/*user-select: text;*/
+	z-index: 9999;
 	user-select: none;
 	font-size: 28px;
 	border-radius: 2px;
+	transition: opacity 0.2s 0.2s, visibility 0s 0.4s;
+}
+.nikud-keyboard:active,
+.nikud input:focus+.nikud-keyboard {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 0.2s 0s, visibility 0s 0s;
 }
 .nikud-key {
 	display: inline-block;
@@ -31,7 +41,7 @@
 	cursor: pointer;
 	background: #fff;
 	box-shadow: 0 2px #999, inset 0 0 #999;
-	transition: box-shadow 0.15s;
+	transition: box-shadow 0.1s, background 0.1s, color 0.1s;
 }
 #nikud-key-dagesh {
 	margin-right: 5px;
@@ -47,10 +57,10 @@
 	display: inline-block;
 	position: relative;
 	width: 16px;
-	transition: transform 0.15s;
+	transition: transform 0.1s;
 }
 .nikud-key span:after {
-	content:'○';
+	content: '○';
 	display: inline-block;
 	position: absolute;
 	right: 0;
