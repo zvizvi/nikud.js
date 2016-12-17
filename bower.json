@@ -1,0 +1,23 @@
+{
+  "name": "nikud.js",
+  "main": "nikud.js",
+  "homepage": "https://github.com/zvizvi/nikud.js",
+  "authors": [
+    "zvizvi"
+  ],
+  "description": "",
+  "keywords": [
+    "nikud"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
