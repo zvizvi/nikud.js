@@ -13,40 +13,40 @@ setNikud = function(inputDiv) {
 	self.inputDiv = $(inputDiv);
 	self.keyboardHtml = '<div class="nikud-keyboard">\
 		<div class="nikud-key" id="nikud-key-kamatz" data-nikud="ָ">\
-			<span>ָ</span>\
+			<span>○</span>\
 		</div>\
 		<div class="nikud-key" id="nikud-key-patach" data-nikud="ַ">\
-			<span>ַ</span>\
+			<span>○</span>\
 		</div>\
 		<div class="nikud-key" id="nikud-key-tzere" data-nikud="ֵ">\
-			<span>ֵ</span>\
+			<span>○</span>\
 		</div>\
 		<div class="nikud-key" id="nikud-key-segol" data-nikud="ֶ">\
-			<span>ֶ</span>\
+			<span>○</span>\
 		</div>\
 		<div class="nikud-key" id="nikud-key-hiriq" data-nikud="ִ">\
-			<span>ִ‎</span>\
+			<span>○</span>\
 		</div>\
 		<div class="nikud-key" id="nikud-key-holam" data-nikud="ֹ">\
-			<span style="text-align: left">ֹ‎</span>\
+			<span>○</span>\
 		</div>\
 		<div class="nikud-key" id="nikud-key-kubutz" data-nikud="ֻ">\
-			<span>ֻ</span>\
+			<span>○</span>\
 		</div>\
 		<div class="nikud-key" id="nikud-key-shva" data-nikud="ְ">\
-			<span>ְ</span>\
+			<span>○</span>\
 		</div>\
 		<div class="nikud-key" id="nikud-key-Hataf-kamatz" data-nikud="ֳ">\
-			<span>ֳ</span>\
+			<span>○</span>\
 		</div>\
 		<div class="nikud-key" id="nikud-key-Hataf-patach" data-nikud="ֲ">\
-			<span>ֲ</span>\
+			<span>○</span>\
 		</div>\
 		<div class="nikud-key" id="nikud-key-Hataf-segol" data-nikud="ֱ">\
-			<span>ֱ</span>\
+			<span>○</span>\
 		</div>\
 		<div class="nikud-key" id="nikud-key-dagesh" data-nikud="ּ">\
-			<span>ּ</span>\
+			<span>○</span>\
 		</div>\
 	</div>';
 
