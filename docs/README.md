@@ -16,7 +16,7 @@ bower install nikud.js
 
 ##install
 
-Add nikud.js and nikud.css to your HTML page. 
+Add nikud.js and nikud.css to your HTML page.
 Note: jquery is required.
 
 ```
