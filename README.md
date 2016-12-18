@@ -3,7 +3,7 @@ jquery plugin for [Hebrew Niqqud](https://en.wikipedia.org/wiki/Niqqud).
 The plugin add a Niqqud Toolbar to any html input.
 
 ##Example
-[link](/zvizvi.github.io/nikud.js/)
+[link](https://zvizvi.github.io/nikud.js/)
 
 ##download
 
