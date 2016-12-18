@@ -18,11 +18,13 @@
 	visibility: hidden;
 	justify-content: space-around;
 	width: 415px;
+	text-align: center;
 	background: #d0d5db;
 	padding: 5px 2px 6px;
 	z-index: 9999;
 	user-select: none;
 	font-size: 30px;
+	text-align: center;
 	border-radius: 2px;
 	transition: opacity 0.2s 0.2s, visibility 0s 0.4s;
 }
