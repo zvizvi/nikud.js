@@ -6,22 +6,29 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 <script src="src/nikud.js"></script>
 <style>
+@font-face{
+	font-family: 'SBL hebrew';
+	font-style: normal;
+	font-weight: 400;
+	src: local('SBL hebrew'), url(src/SBL_Hbrw.ttf) format('truetype');
+}
 body {
 	text-align: center;
 }
 input {
 	font-size: 30px;
+	font-family: 'SBL Hebrew', Narkisim, David, monospace;
 }
 </style>
 <script>
 $(document).ready(function(){
-	$('input').nikud();
-	$('input').val($('input').val());
+	var input = $('input');
+	var len = input.val().length * 2;
+	input[0].setSelectionRange(len,len);
+	input.nikud();
 })
 </script>
 </head>
 <body>
-	<div class="nikud">
-		<input type="text" value="שָלוֹם" autofocus />
-	</div>
+	<input type="text" value="שָלוֹם" class="nikud" autofocus  />
 </body>

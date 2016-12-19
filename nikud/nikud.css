@@ -1,11 +1,11 @@
-﻿.nikud * {
+﻿.nikud-wrap * {
 	box-sizing: border-box;
 }
-.nikud {
+.nikud-wrap {
 	display: inline-block;
 	position: relative;
 }
-.nikud input,
+.nikud-wrap input,
 .nikud-keyboard {
 	font-family: SBL Hebrew, Narkisim, David, monospace;
 }
@@ -29,7 +29,7 @@
 	transition: opacity 0.2s 0.2s, visibility 0s 0.4s;
 }
 .nikud-keyboard:active,
-.nikud input:focus+.nikud-keyboard {
+.nikud-wrap input:focus+.nikud-keyboard {
 	opacity: 1;
 	visibility: visible;
 	transition: opacity 0.2s 0s, visibility 0s 0s;
