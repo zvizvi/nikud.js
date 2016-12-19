@@ -55,6 +55,11 @@ setNikud = function(input) {
 	self.nikudDiv.click(function() {
 		self.nikudInput.focus();
 	})
+	//set autofocus.
+	var attr = self.nikudInput.attr('autofocus');
+	if (typeof attr !== typeof undefined && attr !== false) {
+		self.nikudInput.focus();
+	}
 }
 setNikud.prototype.keyboardHtml = '<div class="nikud-keyboard">\
 		<div class="nikud-key" id="nikud-key-kamatz" data-nikud="ָ">\
