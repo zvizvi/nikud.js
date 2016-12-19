@@ -2,7 +2,9 @@
 	jQuery.fn.extend({
 		nikud: function() {
 			$(this).each(function(i, input) {
-				new setNikud(input);
+				if (input.tagName == 'INPUT' || input.tagName == 'TEXTAREA') {
+					new setNikud(input);
+				}
 			})
 		}
 	})
@@ -55,6 +57,7 @@ setNikud = function(input) {
 	self.nikudDiv.click(function() {
 		self.nikudInput.focus();
 	})
+
 	//set autofocus.
 	var attr = self.nikudInput.attr('autofocus');
 	if (typeof attr !== typeof undefined && attr !== false) {
