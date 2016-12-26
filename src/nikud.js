@@ -1,4 +1,4 @@
-﻿$(document).ready(function() {
+$(document).ready(function() {
 	jQuery.fn.extend({
 		nikud: function() {
 			$(this).each(function(i, input) {
@@ -9,7 +9,20 @@
 		}
 	})
 });
-setNikud = function(input) {
+
+function isHebrew(c) {
+	return (c >= 1488 && c <= 1514);
+}
+
+function isNikud(c) {
+	return (c > 1455 && c < 1470);
+}
+
+function isDagesh(c) {
+	return (c == 1468);
+}
+
+var setNikud = function(input) {
 	var self = this;
 
 	self.nikudInput = $(input).wrap('<div class="nikud-wrap"></div>');
@@ -25,15 +38,14 @@ setNikud = function(input) {
 		var currentChar = val.charCodeAt(self.nikudInput[0].selectionEnd - 1);
 		var secoundCurrentChar = val.charCodeAt(self.nikudInput[0].selectionEnd - 2);
 
-		if (isNaN(currentChar) || currentChar < 1488 || currentChar > 1514) {
+		if (isNaN(currentChar) || !isHebrew(currentChar)) {
 			self.allKeys.addClass('-disabled');
-			if (
-				currentChar == 1468 && secoundCurrentChar > 1455 && secoundCurrentChar < 1470 ||
-				secoundCurrentChar == 1468 && currentChar > 1455 && currentChar < 1470
-			) {} else if (currentChar == 1468) { //dagesh
-				self.nikudKey.removeClass('-disabled');
-			} else if (currentChar > 1455 && currentChar < 1470) { //nikud
+			if ((isNikud(currentChar) && isDagesh(secoundCurrentChar)) || (isDagesh(currentChar) && isNikud(secoundCurrentChar))) {
+				// do nothing
+			} else if (isNikud(currentChar) && !isDagesh(currentChar)) {
 				self.dageshKey.removeClass('-disabled');
+			} else if (isDagesh(currentChar)) {
+				self.nikudKey.removeClass('-disabled');
 			}
 		} else {
 			self.allKeys.removeClass('-disabled');
@@ -58,12 +70,13 @@ setNikud = function(input) {
 		self.nikudInput.focus();
 	})
 
-	//set autofocus.
+	// set autofocus:
 	var attr = self.nikudInput.attr('autofocus');
 	if (typeof attr !== typeof undefined && attr !== false) {
 		self.nikudInput.focus();
 	}
 }
+
 setNikud.prototype.keyboardHtml = '<div class="nikud-keyboard">\
 		<div class="nikud-key" id="nikud-key-kamatz" data-nikud="ָ">\
 			<span>○</span>\
