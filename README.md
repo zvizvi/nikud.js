@@ -2,19 +2,19 @@
 jQuery plugin for [Hebrew Niqqud](https://en.wikipedia.org/wiki/Niqqud).  
 This plugin adds a Niqqud Toolbar to any HTML input element.
 
-##Download
+## Download
 
-#####Git
+##### Git
 ```bash
 git clone https://github.com/zvizvi/nikud.js.git
 ```
 
-####Bower
+#### Bower
 ```bash
 bower install nikud.js
 ```
 
-##Installtion
+## Installtion
 
 Add `nikud.js` and `nikud.css` in your HTML page.  
 _**Note:** jquery is required._
@@ -25,10 +25,10 @@ _**Note:** jquery is required._
 <script src=" nikud.js"></script>
 ```
 
-##Setup
+## Setup
 ```javascript
 $('input').nikud();
 ```
 
-##Example
+## Example
 Use this [link](https://zvizvi.github.io/nikud.js/) as an example.
