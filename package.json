@@ -1,8 +1,8 @@
 {
   "name": "nikud.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "zvizvi",
-  "description": "jQuery plugin for [Hebrew Niqqud](https://en.wikipedia.org/wiki/Niqqud).   This plugin adds a Niqqud Toolbar to any HTML input element.",
+  "description": "jQuery plugin for [Hebrew Niqqud](https://en.wikipedia.org/wiki/Niqqud).\nThis plugin adds a Niqqud Toolbar to any HTML input element.",
   "license": "MIT",
   "main": "src/nikud.js",
   "repository": {
